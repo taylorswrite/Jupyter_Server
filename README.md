@@ -46,7 +46,41 @@ nano /home/ubuntu/.jupyter/jupyter_server_config.json
 
 ## Setup DuckDNS
 
+## Setup Nginx
 
+### Install Nginx
+
+#### Create a `.conf` in the directory, `/etc/nginx/sites-available`.
+
+```
+sudo nano /etc/nginx/sites-available/rename.duckdns.org.conf
+```
+
+#### Added the following lines into the created `.conf` file. Change `rename.duckdns.org` to your DuckDNS server name. 
+
+```
+server {
+    listen 80;  # Listen on HTTP (port 80)
+    server_name rename.duckdns.org;
+
+    return 301 https://$server_name$request_uri;  # Redirect to HTTPS
+}
+
+server {
+    listen 443 ssl; # Listen on port 443 for HTTPS
+    server_name rename.duckdns.org;
+
+    ssl_certificate /etc/letsencrypt/live/yourname.duckdns.org/fullchain.pem; 
+    ssl_certificate_key /etc/letsencrypt/live/yourname.duckdns.org/privkey.pem;
+
+    location / {
+        proxy_pass http://127.0.0.1:8888; # Replace 8888 with Jupyter's actual port
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+```
 
 
 
