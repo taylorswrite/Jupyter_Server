@@ -3,36 +3,30 @@ A guide on configuring a HTTPS, DNS hosted, Jupyter Lab server.
 
 ## Install Jupter Lab
 
-### 1. Update and upgrade system
+### 1. Install Jupyter Lab
 
 ```{bash}
 sudo apt update
-sudo apt upgrade
 sudo apt-get update
-sudo apt-get upgrade
-```
-
-### 2. Install Jupyter Lab
-
-```{bash}
 sudo apt install python3-pip
 sudo apt install jupyter
 pip3 install jupyterlab
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
-### 3. Generate a configuration file and set a password
+### 2. Generate a configuration file and set a password
 
 ```{bash}
 jupyter lab --generate-config
 jupyter lab password
 ```
-### 4. Confirm password is encrypted (hashed)
+### 3. Confirm password is encrypted (hashed)
 
 ```{bash}
-nano /home/ubuntu/.jupyter/jupyter_server_config.json
+nano $HOME/.jupyter/jupyter_server_config.json
 ```
 
-### 5. Configure Jupter Lab for DNS hosting
+### 4. Configure Jupter Lab for DNS hosting
 
 ```{json}
 {  
