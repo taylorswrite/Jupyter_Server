@@ -11,6 +11,7 @@ sudo apt-get update
 sudo apt install python3-pip
 sudo apt install jupyter
 pip3 install jupyterlab
+sudo apt install jupyter-core
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
