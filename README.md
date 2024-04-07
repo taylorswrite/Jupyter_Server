@@ -34,7 +34,7 @@ nano $HOME/.jupyter/jupyter_server_config.json
     "password": "YOUR ENCRYPTED PASSWORD IS HERE",
     "allow_remote_access":true,
     "ip":"*",
-    "port":80,
+    "port":8888,
     "allow_root":true
   }
 }
