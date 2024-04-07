@@ -15,6 +15,8 @@ sudo apt-get upgrade
 ### 2. Install Jupyter Lab
 
 ```{bash}
+sudo apt install python3-pip
+sudo apt install jupyter
 pip3 install jupyterlab
 ```
 
