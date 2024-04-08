@@ -103,3 +103,4 @@ server {
 
 ## Sources:
 Medium Article: [Set up Remote Jupyter Lab/Notebook Server for Browser Access](https://medium.com/@mlquest0/set-up-remote-jupyter-lab-notebook-server-for-remote-browser-access-2cef464f203e)
+Medium Article: [Setting Up Jupyter Notebook On A Server With NGINX As Proxy](https://medium.com/@nicklas_bocksberger/setting-up-jupyter-notebook-on-a-server-with-nginx-as-proxy-d579d4075bb)
